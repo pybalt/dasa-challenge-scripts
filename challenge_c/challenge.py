@@ -62,7 +62,7 @@ def write_json(data, filename):
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
-if __name__ == '__main__':
+def entrypoint():
     number = input("Input a number: ")
     data = get_first(number)
-    write_json(data, 'challenge_c/output.json')
+    write_json(data, 'outputs/challenge_c.json')
