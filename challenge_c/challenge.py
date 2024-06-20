@@ -65,4 +65,4 @@ def write_json(data, filename):
 if __name__ == '__main__':
     number = input("Input a number: ")
     data = get_first(number)
-    write_json(data, 'output.json')
+    write_json(data, 'challenge_c/output.json')
