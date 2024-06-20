@@ -1,7 +1,7 @@
 
 if __name__ == '__main__':
 
-    challenge = input("Input a challenge: A, B, C").lower()
+    challenge = input("Input a challenge: A, B, C\n").lower()
 
     if challenge == 'a':
         ...
