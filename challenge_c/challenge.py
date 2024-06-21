@@ -145,12 +145,11 @@ def write_json(data, filename):
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
-def entrypoint():
+def entrypoint(number: str):
     """
     This is the entrypoint function for the challenge_c script.
     It prompts the user to input a number, retrieves data using the `get_first` function,
     and writes the data to a JSON file using the `write_json` function.
     """
-    number = input("Input a number: ")
     data = get_first(number)
     write_json(data, 'outputs/challenge_c.json')
