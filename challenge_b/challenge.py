@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
 import xlsxwriter
-import logging
 
 
 def get_driver() -> webdriver.Chrome:
@@ -12,9 +11,6 @@ def get_driver() -> webdriver.Chrome:
     Returns:
         A Selenium WebDriver object for the Chrome browser.
     """
-    logging.getLogger('selenium').setLevel(logging.ERROR)
-    logging.getLogger('urllib3').setLevel(logging.ERROR)
-
     URL = "https://www.osbar.org/members/membersearch_start.asp"
     options = webdriver.ChromeOptions()
     # Disables the sandbox for ChromeDriver
