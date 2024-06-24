@@ -151,5 +151,8 @@ def entrypoint(number: str):
     It prompts the user to input a number, retrieves data using the `get_first` function,
     and writes the data to a JSON file using the `write_json` function.
     """
-    data = get_first(number)
-    write_json(data, 'outputs/challenge_c.json')
+    try:
+        data = get_first(number)
+        write_json(data, 'outputs/challenge_c.json')
+    except KeyError:
+        print("Not found")
