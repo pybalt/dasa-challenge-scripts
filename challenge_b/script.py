@@ -53,10 +53,12 @@ def entrypoint(bar_number: str, url: str) -> None:
         None
     """
     driver = get_driver(url)
+    try:
+        if driver is None:
+            return
 
-    if driver is None:
-        return
-
-    data = extract_data(driver, bar_number=bar_number)
-    create_excel(data)
+        data = extract_data(driver, bar_number=bar_number)
+        create_excel(data)
+    except Exception as e:
+        print(e)
     driver.quit()

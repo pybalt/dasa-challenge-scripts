@@ -1,6 +1,8 @@
 import requests
 import json
 
+from utils import write_json
+
 
 class API:
     """
@@ -130,21 +132,6 @@ def curate_data(id, data: dict):
     }
 
 
-def write_json(data, filename):
-    """
-    Write data to a JSON file.
-
-    Args:
-        data (dict): The data to be written to the file.
-        filename (str): The name of the file to write the data to.
-
-    Returns:
-        None
-    """
-    with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
-
-
 def entrypoint(number: str):
     """
     This is the entrypoint function for the challenge_c script.
@@ -153,6 +140,6 @@ def entrypoint(number: str):
     """
     try:
         data = get_first(number)
-        write_json(data, 'outputs/challenge_c.json')
+        write_json(data, 'challenge_c')
     except KeyError:
         print("Not found")
